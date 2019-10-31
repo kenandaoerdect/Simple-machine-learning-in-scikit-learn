@@ -15,7 +15,6 @@ pre_test = data[800:]
 # print(pre_train.shape, pre_test.shape)
 # (800, 4) (200, 4)
 
-# standardization
 train_data = pre_train[:, :-1]
 train_label = pre_train[:, -1].astype(int)
 test_data = pre_test[:, :-1]
@@ -23,6 +22,7 @@ test_label = pre_test[:, -1].astype(int)
 # print(train_data.shape, train_label.shape, test_data.shape, test_label.shape)
 # (800, 3) (800,) (200, 3) (200,)
 
+# standardization
 standardScalar = StandardScaler()
 standardScalar.fit(train_data)
 train_data_standard = standardScalar.transform(train_data)
